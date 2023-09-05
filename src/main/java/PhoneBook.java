@@ -18,7 +18,6 @@ public class PhoneBook {
             return false;
         } else {
             phoneBook.put(name, number);
-            System.out.println("Пользователь создан.");
             return true;
         }
     }
@@ -33,5 +32,9 @@ public class PhoneBook {
             }
         }
         return "Пользователя с таким номером не существует.";
+    }
+
+    public String findByName(String name) {
+        return "name";
     }
 }
