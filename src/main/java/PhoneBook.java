@@ -5,5 +5,7 @@ public class PhoneBook {
 
     static Map<String, String> phoneBook = new TreeMap<>();
 
-
+    public static boolean add(String name, String number) {
+        return false;
+    }
 }
