@@ -35,6 +35,10 @@ public class PhoneBook {
     }
 
     public String findByName(String name) {
-        return "name";
+        if (phoneBook.containsKey(name)) {
+            System.out.println("Номер пользователя, зарегистрированный под этим именем: " + phoneBook.get(name));
+            return phoneBook.get(name);
+        }
+        return "Номера зарегестрированного под таким именем пользователем не существует.";
     }
 }

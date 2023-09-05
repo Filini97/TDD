@@ -19,7 +19,7 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void findByName(String name) {
+    public void findByName() {
         testBook.add("Alexey", "001101110");
         Assertions.assertEquals("001101110", testBook.findByName("Alexey"));
     }
