@@ -26,7 +26,7 @@ public class PhoneBook {
         if (phoneBook.containsValue(number)) {
             for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
                 if (phoneBook.get(entry.getKey()).equals(number)) {
-                    System.out.println("Имя пользователя по этому номеру: " + entry.getKey());
+                    System.out.println("Имя пользователя по этому номеру: " + entry.getKey() + ".");
                     return entry.getKey();
                 }
             }
@@ -36,13 +36,20 @@ public class PhoneBook {
 
     public String findByName(String name) {
         if (phoneBook.containsKey(name)) {
-            System.out.println("Номер пользователя, зарегистрированный под этим именем: " + phoneBook.get(name));
+            System.out.println("Номер пользователя, зарегистрированный под этим именем: " + phoneBook.get(name) + ".");
             return phoneBook.get(name);
         }
         return "Номера зарегестрированного под таким именем пользователем не существует.";
     }
 
-    public static String printAllNames() {
-        return "names";
+    public String printAllNames() {
+        StringBuilder print = new StringBuilder();
+        if (phoneBook.isEmpty()) {
+            return "Книга пуста.";
+        }
+        for (Map.Entry<String, String> records : phoneBook.entrySet()) {
+            print.append(records.getKey()).append(" ");
+        }
+        return print.toString();
     }
 }

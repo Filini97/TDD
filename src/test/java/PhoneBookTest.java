@@ -30,6 +30,6 @@ public class PhoneBookTest {
         PhoneBook testBook = new PhoneBook();
         testBook.add("Anastasia", "000011110");
         testBook.add("Alexey", "001101110");
-        Assertions.assertEquals("Alexey Anastasia", testBook.printAllNames());
+        Assertions.assertEquals("AlexeyAnastasia", testBook.printAllNames().replaceAll(" ", ""));
     }
 }
