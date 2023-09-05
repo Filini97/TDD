@@ -2,10 +2,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneBook {
+    Map<String, String> phoneBook = new TreeMap<>();
 
-    static Map<String, String> phoneBook = new TreeMap<>();
-
-    public static boolean add(String name, String number) {
+    public boolean add(String name, String number) {
         if (phoneBook.containsKey(name)) {
             System.out.println("Пользователь уже зарегестрирован.");
             return false;
@@ -15,15 +14,24 @@ public class PhoneBook {
             return false;
         }
         if (name.equals("name")) {
-            System.out.println("Неправильное имя пользователя");
+            System.out.println("Неправильное имя пользователя.");
             return false;
         } else {
             phoneBook.put(name, number);
+            System.out.println("Пользователь создан.");
             return true;
         }
     }
 
-    public static String findByNumber(String number) {
-        return "name";
+    public String findByNumber(String number) {
+        if (phoneBook.containsValue(number)) {
+            for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
+                if (phoneBook.get(entry.getKey()).equals(number)) {
+                    System.out.println("Имя пользователя по этому номеру: " + entry.getKey());
+                    return entry.getKey();
+                }
+            }
+        }
+        return "Пользователя с таким номером не существует.";
     }
 }
