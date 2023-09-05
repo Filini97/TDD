@@ -22,4 +22,8 @@ public class PhoneBook {
             return true;
         }
     }
+
+    public static String findByNumber(String number) {
+        return "name";
+    }
 }

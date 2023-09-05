@@ -12,4 +12,10 @@ public class PhoneBookTest {
         boolean result = testBook.add(defaultName, defaultNumber);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void findByNumberTest() {
+        testBook.add("Alexey", "00001001");
+        Assertions.assertEquals("Alexey", testBook.findByNumber("00001001"));
+    }
 }
