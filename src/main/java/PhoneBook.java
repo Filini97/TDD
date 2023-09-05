@@ -41,4 +41,8 @@ public class PhoneBook {
         }
         return "Номера зарегестрированного под таким именем пользователем не существует.";
     }
+
+    public static String printAllNames() {
+        return "names";
+    }
 }
